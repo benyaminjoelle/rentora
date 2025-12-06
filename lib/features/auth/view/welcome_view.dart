@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rentora/core/constants/app_colors.dart';
 import 'package:rentora/core/routes/app_routes.dart';
-import 'package:rentora/features/auth/view/login_view.dart';
+
 import 'package:rentora/features/auth/widgets/custom_button.dart';
 
 class WelcomeView extends StatelessWidget {

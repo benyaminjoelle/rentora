@@ -4,10 +4,10 @@ import 'package:rentora/core/constants/app_colors.dart';
 import 'package:rentora/core/routes/app_routes.dart';
 import 'package:rentora/core/utils/validators.dart';
 import 'package:rentora/features/auth/controller/login_controller.dart';
-import 'package:rentora/features/auth/view/signup_view.dart';
+
 import 'package:rentora/features/auth/widgets/custom_button.dart';
 import 'package:rentora/features/auth/widgets/custom_textfield.dart';
-import 'package:rentora/features/home/view/home_view.dart';
+
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
