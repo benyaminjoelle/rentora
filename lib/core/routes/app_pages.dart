@@ -22,11 +22,11 @@ class AppPages {
       binding: SignupBinding()),
 
        GetPage(
-        name: '/',
+        name: AppRoutes.splash,
          page: () => const MySplash()),
 
     GetPage(
-      name: '/welcome',
+      name: AppRoutes.welcome,
        page: () => const WelcomeView()),
 
        GetPage(
