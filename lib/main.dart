@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:rentora/core/routes/app_pages.dart';
 import 'package:rentora/localization/local.dart';
 import 'package:rentora/splash.dart';
 
@@ -16,7 +17,9 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
        translations: AppTranslation(),
        locale: Locale('en'),
-      home: const MySplash(),
+       initialRoute: '/',
+       getPages: AppPages.pages,
+     
     );
   }
 }

@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rentora/core/constants/app_colors.dart';
+import 'package:rentora/core/routes/app_routes.dart';
 import 'package:rentora/core/utils/validators.dart';
 import 'package:rentora/features/auth/controller/login_controller.dart';
 import 'package:rentora/features/auth/view/signup_view.dart';
 import 'package:rentora/features/auth/widgets/custom_button.dart';
 import 'package:rentora/features/auth/widgets/custom_textfield.dart';
+import 'package:rentora/features/home/view/home_view.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(LoginController());
+    final controller = Get.find<LoginController>();
 
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
@@ -23,12 +25,12 @@ class LoginView extends StatelessWidget {
             physics: BouncingScrollPhysics(),
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Form(                         // ✅ ONLY ONE FORM HERE
+              child: Form(
+                
                 key: controller.formKey,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-
                     GestureDetector(
                       onTap: () => Get.back(),
                       child: const Icon(
@@ -79,21 +81,23 @@ class LoginView extends StatelessWidget {
 
                     SizedBox(height: 10),
 
-                    Obx(() => CostumTextfield(
-                          validator: Validators.passwordValidation,
-                          hint: 'Enter Your Password'.tr,
-                          controller: controller.password,
-                          obscure: controller.isPasswordHidden.value,
-                          suffix: IconButton(
-                            icon: Icon(
-                              controller.isPasswordHidden.value
-                                  ? Icons.visibility_off
-                                  : Icons.visibility,
-                              color: AppColors.lightBlue,
-                            ),
-                            onPressed: controller.togglePassword,
+                    Obx(
+                      () => CostumTextfield(
+                        validator: Validators.passwordValidation,
+                        hint: 'Enter Your Password'.tr,
+                        controller: controller.password,
+                        obscure: controller.isPasswordHidden.value,
+                        suffix: IconButton(
+                          icon: Icon(
+                            controller.isPasswordHidden.value
+                                ? Icons.visibility_off
+                                : Icons.visibility,
+                            color: AppColors.lightBlue,
                           ),
-                        )),
+                          onPressed: controller.togglePassword,
+                        ),
+                      ),
+                    ),
 
                     SizedBox(height: 25),
 
@@ -101,6 +105,7 @@ class LoginView extends StatelessWidget {
                       onPressed: () {
                         if (controller.formKey.currentState!.validate()) {
                           print("Fields valid!");
+                          Get.offAllNamed(AppRoutes.home );
                         }
                       },
                       text: 'Login'.tr,
@@ -108,12 +113,16 @@ class LoginView extends StatelessWidget {
 
                     Row(
                       children: [
-                        Text("Don't have an account?".tr,
-                            style: TextStyle(color: AppColors.white)),
+                        Text(
+                          "Don't have an account?".tr,
+                          style: TextStyle(color: AppColors.white),
+                        ),
                         TextButton(
-                          onPressed: () => Get.to(() => SignupView()),
-                          child: Text('Signup'.tr,
-                              style: TextStyle(color: AppColors.lightBlue)),
+                          onPressed: () => Get.toNamed(AppRoutes.signup),
+                          child: Text(
+                            'Signup'.tr,
+                            style: TextStyle(color: AppColors.lightBlue),
+                          ),
                         ),
                       ],
                     ),

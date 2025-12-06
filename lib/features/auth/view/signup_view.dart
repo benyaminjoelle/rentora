@@ -11,7 +11,7 @@ class SignupView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(SignupController());
+    final controller = Get.find<SignupController>();
 
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
@@ -23,7 +23,7 @@ class SignupView extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
 
-              // 🔥 ONLY CHANGE: One Form for the whole page
+              
               child: Form(
                 key: controller.formkey,
 
@@ -135,7 +135,7 @@ FormField(
               // DAY
               Expanded(
                 child: DropdownButtonFormField<int>(
-                  value: controller.selectedDay.value,
+                  initialValue: controller.selectedDay.value,
                   isExpanded: true,
                   dropdownColor: AppColors.mainColor,
                   style: TextStyle(color: AppColors.white),
@@ -162,7 +162,7 @@ FormField(
               // MONTH
               Expanded(
                 child: DropdownButtonFormField<String>(
-                  value: controller.selectedMonth.value,
+                  initialValue: controller.selectedMonth.value,
                   isExpanded: true,
                   dropdownColor: AppColors.mainColor,
                   style: TextStyle(color: AppColors.white),
@@ -190,7 +190,7 @@ FormField(
               // YEAR
               Expanded(
                 child: DropdownButtonFormField<int>(
-                  value: controller.selectedYear.value,
+                  initialValue: controller.selectedYear.value,
                   isExpanded: true,
                   dropdownColor: AppColors.mainColor,
                   style: TextStyle(color: AppColors.white),
@@ -214,7 +214,7 @@ FormField(
             ],
           )),
 
-      // Error message under the row
+      
       if (state.hasError)
         Padding(
           padding: const EdgeInsets.only(top: 5),
