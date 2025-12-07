@@ -105,7 +105,7 @@ class LoginView extends StatelessWidget {
                       onPressed: () {
                         if (controller.formKey.currentState!.validate()) {
                           print("Fields valid!");
-                          Get.offAllNamed(AppRoutes.home );
+                          Get.offAllNamed(AppRoutes.root );
                         }
                       },
                       text: 'Login'.tr,
