@@ -15,11 +15,14 @@ class HomeView extends StatelessWidget {
         child: Column(
           children: [
             Container(
+              height: 95,
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Row(
                 children: [
-                  Text(
-                    "Location:",
+                  Column(
+                    children: [
+                       Text(
+                    "Location",
                     style: TextStyle(
                         fontWeight: FontWeight.bold, fontSize: 16),
                   ),
@@ -40,12 +43,16 @@ class HomeView extends StatelessWidget {
                           controller.changeCity(value);
                         }
                       },
-                      underline: SizedBox(), // removes border
+                      underline: SizedBox(), 
                     ),
                   ),
+                    ],
+                  ),
+                 
                 ],
               ),
             ),
+            // SizedBox(height: 10,),
             Expanded(
               child: ListView.builder(
                 itemCount: controller.houses.length,

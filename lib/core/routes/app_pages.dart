@@ -6,6 +6,7 @@ import 'package:rentora/features/auth/view/login_view.dart';
 import 'package:rentora/features/auth/view/signup_view.dart';
 import 'package:rentora/features/auth/view/welcome_view.dart';
 import 'package:rentora/features/home/bindings/home_binding.dart';
+import 'package:rentora/features/home/view/details.dart';
 import 'package:rentora/features/home/view/home_view.dart';
 import 'package:rentora/features/myhouse/views/myhouse_view.dart';
 import 'package:rentora/features/notifications/views/notifications_view.dart';
@@ -47,6 +48,9 @@ class AppPages {
         GetPage(
         name: AppRoutes.profile,
         page: () => const ProfileView()),
+        GetPage(
+        name: AppRoutes.details,
+        page: () => Details())
         
   ];
 }
