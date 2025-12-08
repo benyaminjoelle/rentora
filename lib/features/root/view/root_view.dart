@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rentora/core/constants/app_colors.dart';
-import 'package:rentora/features/home/view/home_view.dart';
-import 'package:rentora/features/myhouse/views/myhouse_view.dart';
-import 'package:rentora/features/notifications/views/notifications_view.dart';
-import 'package:rentora/features/profile/views/profile_view.dart';
+
 import '../controller/root_controller.dart';
 
 class RootView extends StatelessWidget {
