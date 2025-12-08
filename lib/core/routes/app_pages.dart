@@ -16,42 +16,37 @@ import 'package:rentora/splash.dart';
 
 class AppPages {
   static final pages = [
-  GetPage(
-    name: AppRoutes.login,
-    page:()=>const LoginView(),
-    binding:LoginBinding()
-     ),
-     GetPage(
-      name: AppRoutes.signup,
-      page: () => const SignupView(),
-      binding: SignupBinding()),
-
-       GetPage(
+        GetPage(
+        name: AppRoutes.login,
+        page:()=>const LoginView(),
+        binding:LoginBinding()),
+        GetPage(
+        name: AppRoutes.signup,
+        page: () => const SignupView(),
+        binding: SignupBinding()),
+        GetPage(
         name: AppRoutes.splash,
-         page: () => const MySplash()),
-
-    GetPage(
-      name: AppRoutes.welcome,
-       page: () => const WelcomeView()),
-
-       GetPage(
+        page: () => const MySplash()),
+        GetPage(
+        name: AppRoutes.welcome,
+        page: () => const WelcomeView()),
+        GetPage(
         name: AppRoutes.home,
         page: ()=> const HomeView(),
         binding:HomeBinding() ),
-         GetPage(
-      name: AppRoutes.myhouse,
-       page: () => const MyhouseView()),
-
         GetPage(
-      name: AppRoutes.root,
-       page: () =>  RootView(),
-       binding: RootBindings()),
+        name: AppRoutes.myhouse,
+        page: () => const MyhouseView()),
         GetPage(
-      name: AppRoutes.notifications,
-       page: () => const NotificationsView()),
+        name: AppRoutes.root,
+        page: () =>  RootView(),
+        binding: RootBindings()),
         GetPage(
-      name: AppRoutes.profile,
-       page: () => const ProfileView()),
+        name: AppRoutes.notifications,
+        page: () => const NotificationsView()),
+        GetPage(
+        name: AppRoutes.profile,
+        page: () => const ProfileView()),
         
   ];
 }

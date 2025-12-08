@@ -38,10 +38,10 @@ class RootView extends StatelessWidget {
               showUnselectedLabels: true,
             
               items: const [
-                BottomNavigationBarItem(icon: Icon(Icons.home,size: 25,), label: 'Home'),
-                BottomNavigationBarItem(icon: Icon(Icons.add_home,size: 25,), label: 'My house'),
-                BottomNavigationBarItem(icon: Icon(Icons.notifications_active_rounded,size: 25,), label: 'notifications'),
-                BottomNavigationBarItem(icon: Icon(Icons.person,size: 25,), label: 'Profile'),
+                BottomNavigationBarItem(icon: Icon(Icons.home,size: 20,), label: 'Home'),
+                BottomNavigationBarItem(icon: Icon(Icons.add_home,size: 20,), label: 'My house'),
+                BottomNavigationBarItem(icon: Icon(Icons.notifications_active_rounded,size: 20,), label: 'notifications'),
+                BottomNavigationBarItem(icon: Icon(Icons.person,size: 20,), label: 'Profile'),
               ],
             ),
           ),
