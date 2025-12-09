@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:get/route_manager.dart';
+import 'package:get/get.dart';
 import 'package:rentora/core/constants/app_colors.dart';
+import 'package:rentora/features/home/view/details.dart';
 
-class HouseCard extends StatelessWidget{
-  
+class HouseCard extends StatelessWidget {
   final String title;
   final String location;
   final String imageUrl;
@@ -15,35 +14,37 @@ class HouseCard extends StatelessWidget{
     required this.title,
     required this.location,
     required this.imageUrl,
-    required this.price
-    });
-
+    required this.price,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      // padding: EdgeInsets.all(10),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Stack(
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(15),
+          onTap: () {
+            Get.to(() => Details());
+          },
+          child: Stack(
             children: [
+            
               Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(15),
-                child: Image.asset(
-                  imageUrl,
-                  height: 350,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(15),
+                  child: Image.asset(
+                    imageUrl,
+                    height: 400,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
-            ),
 
+<<<<<<< HEAD
              SizedBox(height: 10),
              
           MaterialButton(
@@ -64,14 +65,39 @@ class HouseCard extends StatelessWidget{
                 ),),
             ),
           ),
+=======
+            
+              Positioned(
+                top: 20,
+                left: 25,
+                right: 25,
+                child: Card(
+                  elevation: 6,
+                  color: AppColors.white,
+                  child: ListTile(
+                    title: Text(
+                      title,
+                      style: const TextStyle(
+                        color: AppColors.mainColor,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    subtitle: Text(
+                      location,
+                      style: const TextStyle(color: AppColors.mainColor),
+                    ),
+                    trailing: Text(
+                      '\$${price.toStringAsFixed(2)} / month',
+                      style: const TextStyle(color: AppColors.gold),
+                    ),
+                  ),
+                ),
+              ),
+>>>>>>> 91f2cd480aa85c921c5063dfe3499f4cf506fcb1
             ],
           ),
-          SizedBox(height: 20,)
-        ],
-         
-            ),
-          );
-
+        ),
+      ),
+    );
   }
-  
 }
