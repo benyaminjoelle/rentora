@@ -48,7 +48,7 @@ class HouseCard extends StatelessWidget{
              
           MaterialButton(
             onPressed: () { 
-              // Get.to(details)
+               //Get.to(details);
              },
             child: Positioned(
               bottom: 20,

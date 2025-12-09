@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 class Details extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
+    return Scaffold( 
         title: Text('Details Page'),
       ),
       body: Center(
@@ -13,4 +12,9 @@ class Details extends StatelessWidget{
     );
   }
    
-} 
+} ,                       
+                                                      
+                        
+                       
+                          
+                          ,
