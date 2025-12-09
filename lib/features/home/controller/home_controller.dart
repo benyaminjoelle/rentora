@@ -1,7 +1,11 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
   final selectedCity = "All".obs;
+  final scrollController = ScrollController();
+  final SearchController = TextEditingController();
+
 
   void changeCity(String value) {
     selectedCity.value = value;
