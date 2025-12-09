@@ -8,6 +8,7 @@ import 'package:rentora/features/auth/view/welcome_view.dart';
 import 'package:rentora/features/home/bindings/home_binding.dart';
 import 'package:rentora/features/home/view/details.dart';
 import 'package:rentora/features/home/view/home_view.dart';
+import 'package:rentora/features/myhouse/views/details_step_view.dart';
 import 'package:rentora/features/myhouse/views/myhouse_view.dart';
 import 'package:rentora/features/notifications/views/notifications_view.dart';
 import 'package:rentora/features/profile/views/profile_view.dart';
@@ -50,7 +51,10 @@ class AppPages {
         page: () => const ProfileView()),
         GetPage(
         name: AppRoutes.details,
-        page: () => Details())
+        page: () => Details()),
+         GetPage(
+        name: AppRoutes.FirstAddHouse,
+        page: () => FirstAddHouse())
         
   ];
 }

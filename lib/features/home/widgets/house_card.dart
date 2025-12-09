@@ -44,12 +44,11 @@ class HouseCard extends StatelessWidget {
                 ),
               ),
 
-<<<<<<< HEAD
              SizedBox(height: 10),
              
           MaterialButton(
             onPressed: () { 
-               //Get.to(details);
+              //Get.to(details);
              },
             child: Positioned(
               bottom: 20,
@@ -65,7 +64,6 @@ class HouseCard extends StatelessWidget {
                 ),),
             ),
           ),
-=======
             
               Positioned(
                 top: 20,
@@ -93,7 +91,6 @@ class HouseCard extends StatelessWidget {
                   ),
                 ),
               ),
->>>>>>> 91f2cd480aa85c921c5063dfe3499f4cf506fcb1
             ],
           ),
         ),
