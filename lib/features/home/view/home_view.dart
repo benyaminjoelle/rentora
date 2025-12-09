@@ -50,7 +50,7 @@ class HomeView extends StatelessWidget {
               //custom scroll 
         SliverToBoxAdapter(
           child: Container(
-            height: 230,
+            // height: 230,
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
             alignment: Alignment.centerLeft,
             child: Column(
@@ -83,28 +83,28 @@ class HomeView extends StatelessWidget {
                     fillColor: AppColors.white,
                   ),
                 ),
-                  const SizedBox(height: 30),
-                const Text(
-                  "Location",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 16,
-                    color: Colors.grey,
-                  ),
-                ),
+                  const SizedBox(height: 10),
+                // const Text(
+                //   "Location",
+                //   style: TextStyle(
+                //     fontWeight: FontWeight.w400,
+                //     fontSize: 16,
+                //     color: Colors.grey,
+                //   ),
+                // ),
 
-                const SizedBox(height: 10),
                 //dropdown menu
                 Row(
                   children: [
                     const Icon(
                       Icons.location_on,
-                      color: Color.fromARGB(255, 63, 123, 144),
+                      color:AppColors.lightBlue,
                     ),
                     const SizedBox(width: 10),
 
                     Obx(
                       () => DropdownButton<String>(
+                        dropdownColor: AppColors.white,
                         value: controller.selectedCity.value,
                         items: const [
                           DropdownMenuItem(value: "All", child: Text("All Cities")),
@@ -123,7 +123,6 @@ class HomeView extends StatelessWidget {
                 ),
 
               
-
              
               ],
             ),
