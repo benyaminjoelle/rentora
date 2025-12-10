@@ -15,8 +15,10 @@ class HomeView extends StatelessWidget {
     
       return Scaffold(
         backgroundColor: AppColors.white,
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
+       floatingActionButton: Obx(() {
+         return controller.showScrollTopButton.value
+          ? FloatingActionButton(
+            onPressed: () {
             Scontroller.animateTo(
               0,
               duration: const Duration(milliseconds: 500),
@@ -25,7 +27,10 @@ class HomeView extends StatelessWidget {
           },
           backgroundColor: AppColors.white,
           child: const Icon(Icons.arrow_upward),
-        ),
+        )
+      : const SizedBox.shrink();
+}),
+
         body: SafeArea(
           child: CustomScrollView(
             controller: Scontroller,
@@ -38,8 +43,8 @@ class HomeView extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(10),
                       child: Image.asset(
-                        "assets/logonavy.png",
-                        fit: BoxFit.cover, // preserves aspect ratio
+                        "assets/logonavy_small.png",
+                        fit: BoxFit.contain, 
                       ),
                     ),
                   ),
@@ -56,19 +61,30 @@ class HomeView extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+
                  //search field
                 TextFormField(
+
+                  cursorColor: Colors.grey,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
+                        borderSide: BorderSide(
+                        color: Colors.grey,
+                        width: 1,
+                        )
                     ),
                     enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.grey,
+                        width: 1,
+                      ),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide: BorderSide(
-                        color: Theme.of(context).colorScheme.primary,
+                        color: Colors.grey,
                         width: 1,
                       ),
                     ),

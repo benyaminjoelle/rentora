@@ -50,7 +50,7 @@ class AppPages {
         page: () => const ProfileView()),
         GetPage(
         name: AppRoutes.details,
-        page: () => Details())
+        page: () => Details(title: '', location: '', imageUrl: '', price: null,))
         
   ];
 }
