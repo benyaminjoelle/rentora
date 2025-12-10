@@ -9,4 +9,5 @@ abstract class AppRoutes {
   static const profile = '/profile';
   static const notifications = '/notifications';
   static const details = '/details';
+  static const FirstAddHouse = '/firstaddhouse';
 }

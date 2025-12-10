@@ -117,6 +117,67 @@ class HouseCard extends StatelessWidget {
             children: [
               _buildImage(),
               _buildInfoCard(theme),
+            
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(15),
+                  child: Image.asset(
+                    imageUrl,
+                    height: 400,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+
+             SizedBox(height: 10),
+             
+          MaterialButton(
+            onPressed: () { 
+              //Get.to(details);
+             },
+            child: Positioned(
+              bottom: 20,
+              left: 10,
+              child: Card(
+                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                elevation: 6,
+                color: Theme.of(context).colorScheme.surface,
+                child: ListTile(
+                  title: Text(title),
+                  subtitle: Text(location),
+                  trailing: Text('\$${price.toStringAsFixed(2)} / month', style: TextStyle(color: AppColors.mainColor),),
+                ),),
+            ),
+          ),
+            
+              Positioned(
+                top: 20,
+                left: 25,
+                right: 25,
+                child: Card(
+                  elevation: 6,
+                  color: AppColors.white,
+                  child: ListTile(
+                    title: Text(
+                      title,
+                      style: const TextStyle(
+                        color: AppColors.mainColor,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    subtitle: Text(
+                      location,
+                      style: const TextStyle(color: AppColors.mainColor),
+                    ),
+                    trailing: Text(
+                      '\$${price.toStringAsFixed(2)} / month',
+                      style: const TextStyle(color: AppColors.gold),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),

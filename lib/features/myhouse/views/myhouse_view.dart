@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:rentora/core/constants/app_colors.dart';
+import 'package:rentora/core/routes/app_routes.dart';
 import 'package:rentora/features/auth/widgets/custom_button.dart';
 
 class MyhouseView extends StatelessWidget {
@@ -16,10 +18,7 @@ class MyhouseView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image.asset(
-                'assets/salehouse.jpg',
-                height: 240,
-              ),
+              Image.asset('assets/salehouse.jpg', height: 240),
 
               const SizedBox(height: 32),
 
@@ -49,7 +48,7 @@ class MyhouseView extends StatelessWidget {
 
               CustomButton(
                 onPressed: () {
-                  // navigate to add house page
+                  Get.toNamed(AppRoutes.FirstAddHouse);
                 },
                 text: "Let's get started",
                 backgroundColor: AppColors.mainColor,

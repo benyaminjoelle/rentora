@@ -113,4 +113,9 @@ class Details extends StatelessWidget{
     );
   }
    
-} 
+}                        
+                                                      
+                        
+                       
+                          
+                          
